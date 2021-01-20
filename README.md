@@ -8,6 +8,7 @@
   - [XSS (Cross-site Scripting)](#xss-cross-site-scripting)
   - [CSRF (Cross-Site Request Forgery)](#csrf-cross-site-request-forgery)
 - [HTTPS interception](#https-interception)
+- [HSTS](#hsts)
 - [resources](#resources)
 
 
@@ -149,6 +150,12 @@ It is possible to check that interception happened by checking if used certifica
 > "A client does not blindly trust a CA send within TLS connection. It trusts only the root CA stored locally and any certificate/CA has to be directly or indirectly issued by these trusted CA. That means it will not work if a proxy just creates a new certificate and sends its own root CA together with the certificate. Instead this proxy CA has to be explicitly installed into the browser/OS."
 
 If you laptop is controlled by your company then they might add own CA to your web browsers and then such checking is more difficult - cert from response might be valid (will be accepted by your CA) but it should have value in "issued to" field that will not match to URL in web browser address input so the warning still should appear.
+
+# HSTS
+
+https://www.netsparker.com/blog/web-security/http-strict-transport-security-hsts/
+
+"To remedy this and to improve page load speeds, all major browsers (including Chrome, Firefox, Internet Explorer and Safari) contain hard-coded lists of known HTTPS sites. This is called preloading, and is based on the Chromium (Chrome) HSTS preload list. If a site is listed, the browser always connects to it using HTTPS, even on the first visit."
 
 # resources
 https://app.pluralsight.com/library/courses/threat-modeling-with-microsoft-threat-modeling-tool-2016/table-of-contents   
