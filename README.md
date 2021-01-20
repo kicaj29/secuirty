@@ -7,6 +7,7 @@
 - [Common security issues](#common-security-issues)
   - [XSS (Cross-site Scripting)](#xss-cross-site-scripting)
   - [CSRF (Cross-Site Request Forgery)](#csrf-cross-site-request-forgery)
+- [HTTPS interception](#https-interception)
 - [resources](#resources)
 
 
@@ -131,6 +132,23 @@ It uses mechanism of **automatic sending cookies** to the web site from which th
    ```html
    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8OT7CYZ8-OhOpWnspncR1scq-_jBE8XvN9CgBlkuk6KDPiNjkOuHznwfkOqY5e8P13fAy4hMEhigTuhXw5UOaNqNwlypiM3D1R1rXyty2Eco-vs7qMAzzEEK3KC0_chjVzOcN9gXu9paO3KiEjTN-6E">
    ```
+
+# HTTPS interception
+
+https://www.thesslstore.com/blog/https-interception-harming-security/
+https://security.stackexchange.com/questions/119364/how-can-i-detect-https-inspection   
+https://security.stackexchange.com/questions/136503/how-to-prevent-proxy-server-from-https-packet-inspection   
+
+
+HTTPS interception is used to verify is malicious content is sent.
+
+> "First, an HTTPS connection is made between the web server and the interceptor. This allows the interceptor to decrypt and scan the data once it has received it. The interceptor can then perform traffic inspection and anti-virus scanning. Then another HTTPS connection is made between the interceptor and your browser, and the data is encrypted again."
+
+It is possible to check that interception happened by checking if used certificate is valid.
+
+> "A client does not blindly trust a CA send within TLS connection. It trusts only the root CA stored locally and any certificate/CA has to be directly or indirectly issued by these trusted CA. That means it will not work if a proxy just creates a new certificate and sends its own root CA together with the certificate. Instead this proxy CA has to be explicitly installed into the browser/OS."
+
+If you laptop is controlled by your company then they might add own CA to your web browsers and then such checking is more difficult - cert from response might be valid (will be accepted by your CA) but it should have value in "issued to" field that will not match to URL in web browser address input so the warning still should appear.
 
 # resources
 https://app.pluralsight.com/library/courses/threat-modeling-with-microsoft-threat-modeling-tool-2016/table-of-contents   
