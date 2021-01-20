@@ -1,3 +1,15 @@
+- [Thread modeling using Microsoft Threat Modeling Tool](#thread-modeling-using-microsoft-threat-modeling-tool)
+  - [Application review](#application-review)
+    - [Sample application review](#sample-application-review)
+  - [Architecture review](#architecture-review)
+  - [Data flow diagrams](#data-flow-diagrams)
+  - [Templates](#templates)
+- [Common security issues](#common-security-issues)
+  - [XSS (Cross-site Scripting)](#xss-cross-site-scripting)
+  - [CSRF (Cross-Site Request Forgery)](#csrf-cross-site-request-forgery)
+- [resources](#resources)
+
+
 # Thread modeling using Microsoft Threat Modeling Tool
 
 ## Application review
