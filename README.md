@@ -99,10 +99,12 @@ It uses mechanism of **automatic sending cookies** to the web site from which th
    SOP makes sure that that web-site A can send request to web-site B only if web-site B allows on this. By default it is not allowed.
    Thx to this **web browser will not allow** fake e-commerce web-site to send request to bank web-site because bank web-site by default blocks all other origins.
 
-   https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy
+   https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy   
+   https://www.securitylearn.net/tag/understanding-same-origin-policy/
 
    Sometimes we want do exception and then we use CORS.
 
+   >**NOTE: "SOP does not restrict a site from loading JavaScript files from a different domain" (using ```<script>``` tag)**
 
 2. Anti CSFR token
 
